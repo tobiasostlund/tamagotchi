@@ -7,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
 
+        ArrayList<String> Tamagotchis=new ArrayList<String>();
         System.out.println("Välkommen till Tamagotchi!");
         System.out.println("Vad ska din Tamagotchi heta? ");
         String name=scan.nextLine();
@@ -19,21 +20,36 @@ public class Main {
             System.out.println("1: Mata");
             System.out.println("2: Lär ett nytt ord");
             System.out.println("3: Säg ett ord");
-            System.out.println("4: Kolla hälsa");
+            System.out.println("4: Gör ingenting");
             int menyVal = scan.nextInt();
 
             switch(menyVal){
                 case 1:
                     tama1.feed();
+                    tama1.printStats();
                     break;
                 case 2:
-
+                    scan.nextLine();
+                    System.out.println("Vad för ord ska Tamagotchin lära sig?");
+                    String newWord = scan.nextLine();
+                    tama1.teach(newWord);
+                    tama1.printStats();
                     break;
                 case 3:
+                    tama1.hi();
+                    tama1.printStats();
                     break;
                 case 4:
+                    System.out.println("Du gjorde ingenting...");
+                    tama1.printStats();
                     break;
                 default:
+            }
+            tama1.Tick();
+            boolean checkAlive = tama1.getAlive();
+            if(!checkAlive){
+                System.out.println("DU DÖDADE TAMAGOTCHIN");
+                break;
             }
         }
 
