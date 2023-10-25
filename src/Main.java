@@ -38,10 +38,11 @@ public class Main {
 
 
             rungame(tamagotchis.get(choice - 1));
-            /*/for (i = 0; i < tamagotchis.size(); i++) {
-                if(tamagotchis.get(i).getHunger()>9 || tamagotchis.get(i).getBoredom()>9);
-                tamagotchis.remove(i);
-            }/*/
+            for (i = 0; i < tamagotchis.size(); i++) {
+                if(tamagotchis.get(i).getHunger()>9 || tamagotchis.get(i).getBoredom()>9) {
+                    tamagotchis.remove(i);
+                }
+            }
             scan.nextLine();
             System.out.println("Vill du skapa en ny tamagotchi? (j/n)");
             String createNew = scan.nextLine();
