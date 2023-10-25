@@ -23,7 +23,7 @@ public class Tamagotchi {
     }
 
     public void feed(){
-        this.hunger=this.hunger-(random.nextInt(1, 4));
+        this.hunger=this.hunger-(random.nextInt(2, 4));
         if(this.hunger<0){
             this.hunger=0;
         }
@@ -65,7 +65,7 @@ public class Tamagotchi {
     public boolean getAlive(){ return isAlive; }
 
     private void reduceBoredom(){
-        this.boredom=this.boredom-(random.nextInt(1, 4));
+        this.boredom=this.boredom-(random.nextInt(2, 4));
         if(this.boredom<0){
             this.boredom=0;
         }
